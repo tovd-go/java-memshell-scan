@@ -196,13 +196,9 @@
                     ServerEndpointConfig config1 = (ServerEndpointConfig)configField.get(object);
                     Class<?> clazz = config1.getEndpointClass();
 
-                    // 打印 ws 服务 url， 对应的 class
-//        out.println(String.format("websocket name：%s,  websocket class: %s", key, clazz.getName()));
+       
                     Object ob= clazz.newInstance();
-
                     map.put(key,ob);
-//        out.println(clazz.getClassLoader());
-//        out.println(classFileIsExists(clazz.getClass()));
                 }
                 return map;
                 // 如果参数带name， 删除该服务，名字为name参数值
